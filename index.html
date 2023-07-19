@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Projecto 1</title>
+  </head>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+ 
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCFB_aWQfOc6Xt_z0WItMwiwi2qzPHhCZQ",
+      authDomain: "tme-first-project.firebaseapp.com",
+      projectId: "tme-first-project",
+      storageBucket: "tme-first-project.appspot.com",
+      messagingSenderId: "670658312134",
+      appId: "1:670658312134:web:7c08c1049d776a1023e4c7"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function ledOn() {
+      firebase.database().ref("SALA").set({
+        estado: "LIGADA"
+      });
+    }
+
+    function ledOff() {
+      firebase.database().ref("SALA").set({
+        estado: "DESLIGADA"
+      });
+    }
+  </script>
+  <script src="app.js" defer></script>
+  
+  <body>
+    <figure>
+      <img src="tme.png" alt="">
+    </figure>
+    <center>
+    <header class="title">
+      <h1>TME Education</h1>
+      <h2>Universidade Eduardo Mondlane</h2>
+      <h2>Workshop de IoT com Arduino </h2>
+    </header>
+    <h1>Controle remoto de iluminação</h1>
+    <fieldset>
+      <!-- <legend>Sala</legend> -->
+      <div>
+        <button class="led-on" onclick="ledOn()">Ligar</button>
+        <button class="led-off" onclick="ledOff()">Desligar</button>
+      </div>
+    </fieldset>
+    <br />
+    
+    <footer>
+      <p><strong> TME Education Mozambique </strong></p>
+      <br><div class="animation">
+
+        <div class="pulsar"></div>
+    
+        <div class="text">
+            <span>TME</span>
+        </div>
+    </div>
+  </center>
+
+    </footer>
+  </body>
+</html>
